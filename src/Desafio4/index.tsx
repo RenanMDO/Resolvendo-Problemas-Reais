@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 /* TODO
   Existe neste componente alguns problemas.
@@ -21,21 +21,21 @@ export const Desafio4 = () => {
   const [list, setList] = useState<number[]>([])
   const [total, setTotal] = useState(0)
 
-  useEffect(()=>{
+  useEffect(() => {
     const totalCount = count1 + count2 + count3;
     setTotal(totalCount)
     setList([...list, totalCount])
-  },[count3, count2, list])
+  }, [count3, count2, count1])
 
-  const addCount1 = ()=>setCount1(count1 + 1)
-  const addCount2 = ()=>setCount2(count2 + 1)
-  const addCount3 = ()=>setCount3(count3 + 1)
+  const addCount1 = () => setCount1(count1 + 1)
+  const addCount2 = () => setCount2(count2 + 1)
+  const addCount3 = () => setCount3(count3 + 1)
 
   return (
     <>
-      <button onClick={addCount1} data-testid="btn1">adiciona + 1 na contagem 1</button><br/>
-      <button onClick={addCount2} data-testid="btn2">adiciona + 1 na contagem 2</button><br/>
-      <button onClick={addCount3} data-testid="btn3">adiciona + 1 na contagem 3</button><br/>
+      <button onClick={addCount1} data-testid="btn1">adiciona + 1 na contagem 1</button><br />
+      <button onClick={addCount2} data-testid="btn2">adiciona + 1 na contagem 2</button><br />
+      <button onClick={addCount3} data-testid="btn3">adiciona + 1 na contagem 3</button><br />
       <p data-testid="v1">v1: {count1}</p>
       <p data-testid="v2">v2: {count2}</p>
       <p data-testid="v3">v3: {count3}</p>
